@@ -13,7 +13,7 @@ class HelloWorld(Resource):
         return {'hello': 'world'}
 
 
-api.add_resource(HelloWorld, 'https://seek-community.netlify.app/')
+api.add_resource(HelloWorld, '/')
 
 if __name__ == '__main__':
     app.run(debug=True)
