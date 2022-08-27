@@ -12,11 +12,11 @@ class HelloWorld(Resource):
     def get(self):
         return {'hello': 'world'}
 
-#Flah
-#Flah
+
+# Flah
+# Flah
 # aniket
 api.add_resource(HelloWorld, '/')
-api.add_resource(HelloWorld, '/test')
 
 if __name__ == '__main__':
     app.run(debug=True)
