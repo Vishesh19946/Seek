@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import Resource, Api
 from flask_cors import CORS
 
@@ -16,7 +16,7 @@ class HelloWorld(Resource):
 # Flah
 # Flah
 # aniket
-api.add_resource(HelloWorld, '/')
+api.add_resource(HelloWorld, '/hello')
 
 if __name__ == '__main__':
     app.run(debug=True)
