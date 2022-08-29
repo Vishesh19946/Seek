@@ -1,20 +1,14 @@
-import os
-from flask import Flask, jsonify
-from flask_restful import Resource, Api
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask_cors import CORS
+from flask import Flask, jsonify, request
+from flask_restful import Resource
+from __init__ import api, app
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'mysecretkey'
-basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
-app.config['SQLALCHEMY_TRACK MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-Migrate(app, db)
 
-api = Api(app)
-CORS(app)
+class Register_User(Resource):
+    def post(self):
+        content = request.get_json()
+
+        return content
+        print(content, "---------------------------------------")
 
 
 class status(Resource):
@@ -32,6 +26,7 @@ class Sum(Resource):
 
 api.add_resource(status, '/')
 api.add_resource(Sum, '/add/<int:a>,<int:b>')
+api.add_resource(Register_User, '/register/user/')
 
 if __name__ == '__main__':
     app.run()
