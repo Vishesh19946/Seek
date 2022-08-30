@@ -1,4 +1,4 @@
-from __init__ import app
+from models import app
 
 if __name__ == '__main__':
     app.run()
